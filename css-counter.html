@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>css counter</title>
+<style>
+
+
+
+
+ul {
+  list-style:none;
+  list-style:none;
+  font-family: 'Varela Round', sans-serif;
+}
+
+
+/**
+  * 1st Exampale 
+  */
+
+ul.example1 {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  
+  counter-reset:autoMatic;
+  
+}
+
+
+ul.example1 li {
+  width:100px;
+  height:100px;
+  background: #000;
+  margin:5px;
+  position: relative;
+}
+
+ul.example1 li:after {
+  display:block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color:#fff;
+  font-size:2rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  
+  content:counter(autoMatic);
+  counter-increment:autoMatic 10;
+  
+}
+
+
+
+
+/**
+  * 2nd Exampale 
+  */
+
+ul {
+  text-align:center;
+  font-size:1.3rem;
+  
+  counter-reset:autoIncre;
+  
+}
+
+li:before {
+  counter-increment:autoIncre;
+  content:"(" counters(autoIncre, ".") ")" " ";
+  
+}
+
+</style>
+</head>
+<body>
+
+  
+ <div id="example1"> 
+     <ul class="example1">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+  </div>
+  
+  
+ <div id="example2"> 
+     <ul class="example2"> 
+        <li>List Item</li>
+        <li>List Item
+          <ul> 
+            <li>List Item</li>
+            <li>List Item 
+              <ul> 
+                <li>List Item</li>
+                <li>List Item</li>
+                <li>List Item</li>
+              </ul>
+            </li>
+            <li>List Item</li>
+          </ul>
+        </li>
+        <li>List Item</li>
+      </ul>
+  </div>
+  
+</body>
+</html>
